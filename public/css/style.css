@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-color: #242629;
+    --containt-bg-color:#16161A;
+    --main-font-color: #FFFFFE;
+    --second-font-color:#94A1B2;
+    --black-font-color: #000000;
+    --action-color: #7F5AF0;
+    --secondary-color: #2CB67D;
+    --font-title-card-size: 22px;
+    --font-text-card-size: 12px;
+    --font-tag-size:10px;
+
+}
+body{
+    background-color:var(--bg-color);
+}
+a{
+    text-decoration: none;
+}

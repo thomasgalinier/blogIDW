@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TopController!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('css/cardArticle.css')}}">
+{% endblock %}
+{% block body %}
+	<main>
+		<div class="cards-container">
+			{% for article in articles %}
+				{% include "cardArticle/index.html.twig" %}
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}
