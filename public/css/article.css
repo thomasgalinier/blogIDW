@@ -1,0 +1,155 @@
+:root {
+    --bg-color: #242629;
+    --containt-bg-color: #16161a;
+    --main-font-color: #fffffe;
+    --second-font-color: #94a1b2;
+    --black-font-color: #000000;
+    --action-color: #7f5af0;
+    --secondary-color: #2cb67d;
+    --font-title-card-size: 22px;
+    --font-text-card-size: 12px;
+    --font-tag-size: 10px;
+    --header-font-size: 14px;
+    --button-font-size: 16px;
+  }
+*{
+    font-family: "Poppins";
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    gap: 40px;
+}
+.entete-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    gap: 15px;
+    
+}
+.entete-container h1{
+    color: var(--main-font-color) !important;
+}
+.second-text {
+    color: var(--second-font-color);
+    font-size: 14px;
+
+}
+.tag-container {
+    display: flex;
+    gap: 10px;
+  }
+  .tag {
+    padding: 3px 10px;
+    background-color: var(--secondary-color);
+    font-family: "Poppins";
+    font-size: 10px;
+    color: var(--containt-bg-color);
+  }
+  img{
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+  }
+
+.contenue{
+    color: var(--main-font-color);
+    width: 60%;
+    text-align: justify;
+    line-height: 200%;
+    word-spacing: 0.1em;
+}
+.social-container{
+    display: flex;
+    width: 60%;
+   justify-content: space-between;
+   
+}
+.social-container p{
+   color: var(--main-font-color);
+}
+.inter-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.like-view-container{
+    display: flex;
+    gap: 40px;
+}
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.commentaire-form{
+    width: 60%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.commentaire-form p{
+    font-size: 30px;
+    color: var(--main-font-color);
+    display: flex;
+    gap: 20px;
+
+}
+.form-contenue{
+    resize: none;
+    width: 100%;
+    height: 100px;
+    color: var(--containt-bg-color);
+    padding: 10px;
+    
+}
+.commentaire-form label{
+    display: none;
+}
+.form-button{
+    background-color: var(--action-color);
+    color: var(--main-font-color);
+    padding: 10px 10px;
+    width: 20%;
+}
+.commentaires-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 20px;
+}
+.commentaire-container{
+    background-color: var(--containt-bg-color);
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+.commentaire-container p{
+    color: var(--main-font-color);
+}
+.commentaire-container div{
+
+    display: flex;
+    justify-content: space-between;
+}
+.second-text-container p{
+    font-size: 12px;
+    color: var(--second-font-color);
+}
+
+.like-button-commentaire{
+    display: flex;
+    gap: 5px;
+}
+.like{
+    fill: red;
+}
+ .dislike{
+    fill: #fffffe;
+}

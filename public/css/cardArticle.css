@@ -41,7 +41,6 @@ section {
 }
 .tag-container {
   display: flex;
-
   gap: 10px;
 }
 .tag {

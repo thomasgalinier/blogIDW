@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -28,6 +30,22 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Commentaire::class)]
+    private Collection $commentaires;
+
+    #[ORM\ManyToMany(targetEntity: Commentaire::class, inversedBy: 'utilisateurs')]
+    private Collection $like_commentaire;
+
+    #[ORM\ManyToMany(targetEntity: Article::class, inversedBy: 'utilisateurs')]
+    private Collection $likeArticle;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+        $this->like_commentaire = new ArrayCollection();
+        $this->likeArticle = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -97,5 +115,86 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaire $commentaire): static
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires->add($commentaire);
+            $commentaire->setIdUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaire $commentaire): static
+    {
+        if ($this->commentaires->removeElement($commentaire)) {
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getIdUser() === $this) {
+                $commentaire->setIdUser(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString(){
+        return $this->email;
+    }
+
+    /**
+     * @return Collection<int, Commentaire>
+     */
+    public function getLikeCommentaire(): Collection
+    {
+        return $this->like_commentaire;
+    }
+
+    public function addLikeCommentaire(Commentaire $likeCommentaire): static
+    {
+        if (!$this->like_commentaire->contains($likeCommentaire)) {
+            $this->like_commentaire->add($likeCommentaire);
+        }
+
+        return $this;
+    }
+
+    public function removeLikeCommentaire(Commentaire $likeCommentaire): static
+    {
+        $this->like_commentaire->removeElement($likeCommentaire);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Article>
+     */
+    public function getLikeArticle(): Collection
+    {
+        return $this->likeArticle;
+    }
+
+    public function addLikeArticle(Article $likeArticle): static
+    {
+        if (!$this->likeArticle->contains($likeArticle)) {
+            $this->likeArticle->add($likeArticle);
+        }
+
+        return $this;
+    }
+
+    public function removeLikeArticle(Article $likeArticle): static
+    {
+        $this->likeArticle->removeElement($likeArticle);
+
+        return $this;
     }
 }

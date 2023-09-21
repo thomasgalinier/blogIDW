@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{asset('css/article.css')}}">
+{% endblock %}
+{% block javascripts %}
+		<script defer src="{{asset('js/like.js')}}"></script>
+		<script defer src="{{asset('js/likeArticle.js')}}"></script>
+
+{% endblock %}
+
+{% block title %}Hello TopController!
+{% endblock %}
+{% block body %}
+	<main>
+		{% include "article/index.html.twig" %}
+	</main>
+{% endblock %}
