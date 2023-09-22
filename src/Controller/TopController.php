@@ -56,6 +56,7 @@ class TopController extends AbstractController
             'article' => $article,
             'form' => $form,
             'commentaires' =>  $commentaires,
+            'user'=>$user
         ]);
     }
 

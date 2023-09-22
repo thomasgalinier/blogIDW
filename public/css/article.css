@@ -58,7 +58,7 @@ section{
 .contenue{
     color: var(--main-font-color);
     width: 60%;
-    text-align: justify;
+    
     line-height: 200%;
     word-spacing: 0.1em;
 }
@@ -152,4 +152,11 @@ button{
 }
  .dislike{
     fill: #fffffe;
+}
+.no-connect{
+    font-size: 14px;
+    color: var(--main-font-color);
+}
+.no-connect a {
+    color: var(--action-color);
 }

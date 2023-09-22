@@ -1,4 +1,27 @@
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="input-container">
+	{{ form_label(form.titre)}}
+	{{ form_widget(form.titre, {'attr':{"class":"input-text"}})}}
+</div>
+<div class="input-container">
+	{{ form_label(form.resume)}}
+	{{ form_widget(form.resume, {'attr':{"class":"input-text resume"}})}}
+</div>
+<div class="input-container">
+	{{ form_label(form.tags)}}
+	{{ form_widget(form.tags, {'attr':{"class":"input-text"}})}}
+</div>
+<div class="input-container">
+	{{ form_label(form.image)}}
+	{{ form_widget(form.image, {'attr':{"class":"input-text "}})}}
+</div>
+<div class="input-container">
+	{{ form_label(form.contenue)}}
+	{{ form_widget(form.contenue, {'attr':{"class":"input-text textarea"}})}}
+</div>
+
+<button class="btn">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}

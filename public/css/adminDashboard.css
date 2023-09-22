@@ -1,0 +1,31 @@
+:root {
+    --bg-color: #242629;
+    --containt-bg-color: #16161a;
+    --main-font-color: #fffffe;
+    --second-font-color: #94a1b2;
+    --black-font-color: #000000;
+    --action-color: #7f5af0;
+    --secondary-color: #2cb67d;
+    --font-title-card-size: 22px;
+    --font-text-card-size: 12px;
+    --font-tag-size: 10px;
+    --header-font-size: 14px;
+    --button-font-size: 16px;
+  }
+* {
+  font-family: "Poppins";
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 95vh;
+
+  justify-content: center;
+}
+section a{
+    color: var(--main-font-color);
+    background-color: #7f5af0;
+    padding: 10px 40px;
+}

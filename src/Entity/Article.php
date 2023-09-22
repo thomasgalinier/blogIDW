@@ -14,6 +14,7 @@ class Article
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+ 
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -228,5 +229,19 @@ class Article
 
         return $this;
     }
+    private string $articleImgFilename;
+
+    public function geArticleImgFilename(): string
+    {
+        return $this->articleImgFilename;
+    }
+
+    public function setArticleImgFilename(string $articleImgFilename): self
+    {
+        $this->articleImgFilename = $articleImgFilename;
+
+        return $this;
+    }
+    
 }
 

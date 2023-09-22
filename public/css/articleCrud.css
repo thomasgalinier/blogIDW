@@ -45,3 +45,35 @@ table .button{
   .create {
     margin-top: 40px;
   }
+form{
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+}
+.input-text{
+  background-color: transparent;
+  border: 1px solid #fffffe;
+  padding: 5px;
+  width: 60%;
+}
+.resume{
+  width: 70%;
+}
+.textarea{
+  resize: none;
+  width: 70%;
+  height: 400px;
+}
+.btn{
+  background-color: #7f5af0;
+  border:none;
+  width: 10%;
+  padding: 10px;
+  cursor: pointer;
+}
